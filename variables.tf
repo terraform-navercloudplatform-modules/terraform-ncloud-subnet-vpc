@@ -22,7 +22,7 @@ variable "subnet_type" {
   description = "(Required) Internet connectivity. If you use PUBLIC all VMs created within Subnet will be assigned a certified IP by default and will be able to communicate directly over the Internet. Considering the characteristics of Subnet, you can choose Subnet for the purpose of use. Accepted values: PUBLIC (Public) | PRIVATE (Private)."
   type        = string
   validation {
-    condition     = can(regex("PUBLIC|PRIVATE", var.supported_subnet_type))
+    condition     = can(regex("PUBLIC|PRIVATE", var.subnet_type))
     error_message = "subnet_type must be PUBLIC or PRIVATE."
   }
 }
